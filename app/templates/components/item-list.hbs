@@ -1,0 +1,15 @@
+<h5>Shopping List</h5>
+{{input placeholder='Search' value=keyword}}
+<table>
+    <thead>
+        <tr>
+            <th>Item</th>
+            <th>Quantity</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each filteredItems as |item|}}
+            {{item-row currentItem=item}}
+        {{/each}}
+    </tbody>
+</table>
