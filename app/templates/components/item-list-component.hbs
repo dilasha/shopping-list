@@ -1,4 +1,3 @@
-<h5>Shopping List</h5>
 {{input placeholder='Search' value=keyword}}
 <table>
     <thead>
@@ -9,7 +8,10 @@
     </thead>
     <tbody>
         {{#each filteredItems as |item|}}
-            {{item-row currentItem=item}}
+            <tr>
+                <td>{{item.name}}</td>
+                <td>{{item.quantity}}</td>
+            </tr>
         {{/each}}
     </tbody>
 </table>

@@ -1,0 +1,8 @@
+<form>
+    <label>Item</label>
+    {{input value=name placeholder="Item"}}
+    <label>Quantity</label>
+    {{input value=quantity placeholder="Quantity" type='number'}}
+    <br />
+    <button type="submit" class="button-primary" {{action 'triggerAddToList'}}>Add</button>
+</form>
