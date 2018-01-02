@@ -2,16 +2,19 @@
 <table>
     <thead>
         <tr>
-            <th>Item</th>
+            <th>
+                Item             
+                {{!-- <i {{action 'triggerToggleSort'}} class="flaticon-sort small"></i> --}}
+            </th>
             <th>Quantity</th>
         </tr>
     </thead>
     <tbody>
         {{#each filteredItems as |item|}}
-            <tr>
-                <td>{{item.name}}</td>
-                <td>{{item.quantity}}</td>
-            </tr>
+              <tr>
+            <td>{{item.name}}</td>
+            <td>{{item.quantity}}</td>
+        </tr>
         {{/each}}
     </tbody>
 </table>
