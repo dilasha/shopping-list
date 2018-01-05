@@ -3,6 +3,7 @@ import Ember from 'ember';
 export default Ember.Component.extend({
     items: null,
     keyword: null,
+    a:'hii',
     init() {
         //initial render        
         this._super(...arguments);
@@ -13,7 +14,6 @@ export default Ember.Component.extend({
         //initial render        
         //runs everytime a component property is changed
         this._super(...arguments);
-        this.set('keyword', this.get('keyword').toString().toLowerCase());
         console.log('didReceiveAttrs list');
     },
     willRender() {
@@ -43,6 +43,7 @@ export default Ember.Component.extend({
     },
     willUpdate() {
         this._super(...arguments);
+        this.set('keyword', this.get('keyword').toString().toLowerCase());
         console.log('willUpdate list');
     },
     didUpdate() {
@@ -51,6 +52,8 @@ export default Ember.Component.extend({
     },
     willDestroyElement() {
         this._super(...arguments);
+        $('#sidebar').off('animationend');
+        $('#menu-icon').removeClass('active');
         console.log('willDestroyElement list');
     },
     willClearRender() {
@@ -65,7 +68,7 @@ export default Ember.Component.extend({
         return this.search(this.get('items'), 'name', this.get('keyword'));
     }),
     search: function (list, property, keyword) {
-        keyword = keyword.toLowerCase();
+        // keyword = keyword.toLowerCase();
         return list.filter(function (item) {
             if (item.get(property))
                 return item.get(property).toString().toLowerCase().indexOf(keyword) !== -1;

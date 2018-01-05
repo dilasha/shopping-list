@@ -1,0 +1,7 @@
+<td>{{item.name}}</td>
+<td>{{item.quantity}}</td>
+<td>
+    {{yield (hash 
+        delete=(component 'item-delete')
+    )}}
+</td>

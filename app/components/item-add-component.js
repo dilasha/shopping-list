@@ -13,7 +13,7 @@ export default Ember.Component.extend({
         //initial render        
         //runs everytime a component property is changed
         this._super(...arguments);
-        this.set('keyword', this.get('keyword').toString().toLowerCase());
+        this.set('quantity', 1);
         console.log('didReceiveAttrs add');
     },
     willRender() {
